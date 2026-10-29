@@ -225,7 +225,7 @@ int main(int argc, char *argv[])
   laser.setlidaropt(LidarPropScanFrequency, &frequency, sizeof(float));
 
   //设置OTA文件路径
-  laser.setOtaFile("./EAI_GS2_SCM_GD32_APP_031_1_20221111.bin");
+  laser.setOtaFile("./EAI_GS2_M_APP_H00V03R02_20250227.bin");
   //启用加密
   laser.setOtaEncode(true);
 
@@ -239,7 +239,7 @@ int main(int argc, char *argv[])
   }
 
   //开始OTA升级
-  if (!laser.ota())
+  if (!laser.ota(LIDAR_MODULE_ALL))
   {
     fprintf(stderr, "Fail to ota\n");
     fflush(stderr);
